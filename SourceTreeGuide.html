@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SourceTreeGuideV1.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>SourceTreeGuide</h1>
+<h5>作者：Mark24</h5>
+<h5>邮箱：mark.zhangyoung@qq.com</h5>
+<h5>时间：2016.02.19</h5>
+<p><img src="http://ww1.sinaimg.cn/mw690/44894cbbgw1euiv3622uwj2074074dfu.jpg" alt="Source Logo" /></p>
+<h2>先来说说Git是咋么一回事</h2>
+<p>写代码，写完了保存，这是一般文件的流程。Git多加了一个流程，就是保存后，你要提交。Git会追踪你每次保存，和上次保存之间的差别，然后把这些信息，保存在一个文件夹下，文件夹名叫.git。这个文件夹，Git的术语里称之为<strong>仓库</strong>，用仓库可以追踪代码，看到每次改变了什么，可以还原到以前的状态，也可以看别人改了什么，这就是代码版本控制的本质，一种高级的保存功能，自带时光机的那种</p>
+<p>现在祭上图<br />
+<img src="http://ww1.sinaimg.cn/mw690/44894cbbgw1euigc99z8wj20e40bpjsm.jpg" alt="git map" /></p>
+<p>咱们挨个挨个解释一下，解释完，大概就知道怎么回事了。
+第一遍看不懂，不放多看几遍，或者看看其他的资料，对照着。每个人理解的点可能不一样。
+最好把这张图，单独开在一个窗口，对照着，下面就来解释这个图  </p>
+<p>首先看这张图中间，四个圆柱 ：</p>
+<ul>
+<li>Workspace:工作区，就是你正在写的代码  </li>
+<li>index：暂存区，一个本地的缓冲区  </li>
+<li>local repository：本地仓库  </li>
+<li>remote repository：远程仓库  </li>
+</ul>
+<h2>Workspace工作区</h2>
+<p>就是你正在写的代码，正在打开的编辑器里面的内容，解释完了，就这样  </p>
+<h2>index暂存区</h2>
+<p>index照理应该翻译叫索引，这里叫暂存区<br />
+暂存区是干嘛的？<br />
+暂存区是Git和SVN的最重要的差别之一<br />
+我们来看图，箭头就是代码流动的方向  </p>
+<p>Git的流程工作流程就是：<br />
+眼前正在写的代码（workspace）觉得差不多了<br />
+add命令<br />
+提交到暂存区（index）类似于保存一下<br />
+然后你可以返回正在写的代码（workspace）继续写，写的到了一个阶段了<br />
+add命令<br />
+又提交到了暂存区（index）  </p>
+<p>对就是这样子工作的！  </p>
+<p>举一反三！！<br />
+举一反三！！<br />
+重要的事情说三遍，举一反三  </p>
+<p>当你多次提交，基本工作完成的差不多了<br />
+按照道理<br />
+你应该每次都add到了index暂存区  </p>
+<p>现在好了，任务完成<br />
+要把暂存区里的东西，放到本地仓库(local repository)  </p>
+<p>使用commit命令  </p>
+<p>大家看图应该注意到<br />
+worksp --&gt; local repository<br />
+有一个绿色的箭头 commit -a<br />
+这条命令<br />
+就是同时完成，把当前的修改，提交到暂存区，然后把暂存区的提交到<br />
+本地仓库  </p>
+<p>Git每次提交的，都是保存变化的改动，不是简简单单的复制一遍  </p>
+<h2>本地仓库（local repository）</h2>
+<p>就是正式的代码保存的地方  </p>
+<p>如果你本地所有的内容都被commit到本地仓库了<br />
+表示你已经很满意所有的代码<br />
+并且完成了所有的编写  </p>
+<p>这个时候，你想把代码上传到Github或者公司的Git服务器，提交给别人<br />
+看图<br />
+local repository --&gt; remote repository<br />
+中间是push操作  </p>
+<p>想对你正在工作的电脑，你电脑叫local，本地<br />
+网络上的，就叫remote，远程  </p>
+<h2>remote repository 远程仓库</h2>
+<p>就是网络上的仓库<br />
+一般是放在网络上保存<br />
+或者和团队一起配合着干活<br />
+网络仓库就成为一个中枢的感觉  </p>
+<p>我们看图的上半部分<br />
+提交的过程，按照箭头，由下往上：  </p>
+<p>remote repository：远程仓库<br />
+^<br />
+|<br />
+| push：就是“推”，把本地的正式的提交代码，推到网络上<br />
+|<br />
+local repository：本地仓库<br />
+^<br />
+|<br />
+| commit：合并多次修改，提交到仓库保存<br />
+|<br />
+index :暂存区<br />
+^<br />
+|<br />
+| add：一段阶段的代码，保存<br />
+|<br />
+Workspace：正在写代码，写的不错了  </p>
+<p>再来看看这张图的下三路  </p>
+<p>remote repository --&gt; workspace  </p>
+<p>这里有一个pull 黄颜色的，操作（rebase后面讲）<br />
+pull就是“拉”的意思，拉动，把网络的代码，拉动到本地<br />
+拉动的目标是workspace，就是你正在写的代码  </p>
+<p>解释一下这里，比如你正在写代码，或者打开了一个项目<br />
+编辑器Sublime Text上代码显示出来了，表示文件打开了<br />
+这个时候，公司的小明告诉你，公司昨天几位同事加班加点，代码更新了<br />
+让你更新一下代码,以获得人家工作一晚上加班的工作成果<br />
+你这个时候就要pull，拉取最新的代码，以保证自己和大家的工作进度一致<br />
+pull的意义在于，执行完操作，会刷新你的编辑器<br />
+Sublime Text上的代码，会变化到最新的代码<br />
+不信你试试  </p>
+<p>TortoiseGit来pull的时候，编辑器刷新与否，似乎看心情 = =b  </p>
+<p>下面来看红色，红色的两个箭头<br />
+最左边有一个小字<br />
+revert<br />
+意思大概是反转，撤销的意思  </p>
+<p>对啊，你光提交，万一提交错了呢？<br />
+Git里有一套撤销的机制<br />
+撤销的机制尤其复杂<br />
+这里引用一篇文章<a href="http://www.jointforce.com/jfperiodical/article/796?m=d03">戳这里</a><br />
+不过那些都不是我们要说的重点<br />
+学习嘛，要抓住主干，细枝末节的，晚点再说，又不一定全都遇上<br />
+Git复杂的就可能是撤消了，这些我们暂时不管  </p>
+<p>下面还有两路灰色的，左边的说明是compare<br />
+就是可以比较你每次修改的代码和之前的代码有什么区别<br />
+这是Git最重要的作用，就是可以看到每次提交的不同  </p>
+<p>这些也不说，放在后面说  </p>
+<p>现在主要的就是把上三路和pull熟悉  </p>
+<h3>小结</h3>
+<p>【工作区】-&gt;add-&gt;【暂存区】-&gt;commit-&gt;【本地仓库】-&gt;push-&gt;【远程仓库】  </p>
+<p>【工作区】&lt;------------------  pull ----------------- 【远程仓库】</p>
+<p>记住：
+add、commit、push、pull </p>
+<h2>可爱的Source Tree</h2>
+<p><img src="http://ww1.sinaimg.cn/mw690/44894cbbgw1euiv3622uwj2074074dfu.jpg" alt="Source Logo" /></p>
+<p>Source Tree是一个优秀的，直觉式的Git的图形界面客户端<br />
+Source Tree用了很优雅的方式和直觉化的流程，让你很优雅的使用Git<br />
+基本上所有常用场景下，都可以胜任，如果实在情况特殊，使用命令行  </p>
+<p>下面是Source Tree界面<br />
+<img src="http://ww3.sinaimg.cn/mw690/44894cbbgw1euii84onscj212r0ntwke.jpg" alt="Source Tree 界面" /></p>
+<p>Source Tree的设计符合直觉<br />
+这张图上面的图标，基本上是所有常用的操作了</p>
+<ul>
+<li>
+<p>Clone/New：Clone就是克隆，copy拷贝的另一种称呼，这里意思是从远程仓库，拷贝一个项目到本地  
+</p>
+</li>
+<li>
+<p>Commit:大家一看就明白   
+</p>
+</li>
+<li>
+<p>Checkout:没讲，简单的说，你保存了一个版本到暂存区，然后继续写，写着写着后悔了，挨个挨个改回去太麻烦，checkout就是从暂存区的一个保存版本还原到正在写的编辑器，这一点，看第一地图，红色的短的checkout描述的就是这个意思（checkout HEAD后面讲)  
+</p>
+</li>
+<li>
+<p>Discard:丢弃  
+</p>
+</li>
+<li>
+<p>Stash：保存你目前的所有状态，到一个特别的文件--&gt;我个人觉得这个很常用，一会提到  
+</p>
+</li>
+<li>
+<p>Add:把文件提到暂存区  
+</p>
+</li>
+<li>
+<p>Fetch：看看地图，远程仓库拉去到仓库，目前打开的编辑器不会变化  
+</p>
+</li>
+<li>
+<p>Pull：提过了  
+</p>
+</li>
+<li>
+<p>Branch：分支,这个不讲，一般项目负责人负责  
+</p>
+</li>
+<li>
+<p>Merge: 合并分支，同上</p>
+</li>
+</ul>
+<p>觉得难记没关系，SourceTree有中文界面可以挑<br />
+用英文，主要是和Git的命令，对应起来，有助于找规律  </p>
+<p>下面一个框区，就是diff，比较代码不同的地方<br />
+红色是删掉的，标记为减号<br />
+绿色是添加的，标记为加号  </p>
+<p>Source Tree实时帮你显示，所以diff这个命令压根不需要你敲  </p>
+<p>现在了解完毕Git的工作流程<br />
+现在让我们用Source Tree走一遍</p>
+<p>本篇文章就是在Github上建立的一个项目(如果不知道怎么做，请查询Github官方教程)<br />
+然后clone到本地<br />
+把项目添加到了Source Tree</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/44894cbbgw1euivz8amudj20wa0lajwb.jpg" alt="step1" /></p>
+<p>把项目添加到Source Tree<br />
+下面简称SourceTree为ST
+然后用编辑器打开文件编辑，编辑完毕后，保存文件，这个一定要保存，然后可以把编辑器最小化了，然后可以看看ST<br />
+点击如图，第一步，工作副本
+这个要经常点，只要你点了，切换就会刷新<br />
+稍微等一会，第二部的地方，就会出现文件的修改状态<br />
+第二部所在的区域，就是工作区，就是你编辑器，编辑器的文件临时状态，可以部分选，也可以全选，选择后，会出现如下图：</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/44894cbbgw1euivz8qdnkj20vi0ki430.jpg" alt="step2" /></p>
+<p>整个项目移动到上面，就是暂存区，右边是Diff状态，表示你修改了什么</p>
+<p>提交按钮，就是Commit，点击他，进入下图：</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/44894cbbgw1euivz9a1mpj20vi0kin23.jpg" alt="step3" /></p>
+<p>如图会跳出一个commit信息，看过Git的同学，应该知道，每次commit都会让你键入一个message，其实就是写明，你做了什么，改了什么，这样子等到回退，撤销的时候，一看信息就明白了</p>
+<p>下面有一个按钮，和上面的推送是一样的<br />
+可以先commit，然后push<br />
+如果仓库是配置好的  </p>
+<p>按一下，就可以提交代码了  </p>
+<p>提交好代码后，可以看到如图：</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/44894cbbgw1euivz9ommyj20wa0la79d.jpg" alt="step4" /></p>
+<p>左边的分支，可以看到整体情况<br />
+右边的字段：<br />
+图表：一种分支图，可以看清项目合并情况<br />
+描述：就是commit的message<br />
+提交：提交生成的hash码<br />
+作者：谁提交的，这个团队配合作用救命掀了</p>
+<p>真正的复杂的项目，上一张图，让大家感受下：</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/44894cbbgw1euivzaquodj20vj0iladg.jpg" alt="step5" /></p>
+<p>分支情况会特别的复杂，感受下。</p>
+<h3>小结</h3>
+<p>ST确实用图形界面把Git的操作简化到十分优雅的地步<br />
+Git提交代码的流程，已经描述完毕<br />
+是不是十分简单</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
